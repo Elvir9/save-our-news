@@ -1,0 +1,26 @@
+/* For mobile phones: */
+@media only screen and (max-width: 767px) {
+  .base-loader {
+    margin-top: 150px !important;
+    &:before {
+      @include loader-before;
+    }
+    &:after {
+      @include loader-after;
+    }
+  }
+}
+
+.base-loader {
+  margin-top: 200px !important;
+  color: $white-color;
+  &:before {
+    @include loader-before;
+  }
+  &:after {
+    @include loader-after;
+  }
+}
+.ui.big.text.loader {
+  padding-top: 3.2rem !important;
+}

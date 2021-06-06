@@ -12,3 +12,29 @@ html {
     background-size: cover;
   }
 }
+
+@mixin loader-before {
+  height: 35px !important;
+  width: 35px !important;
+  border: 3px solid $green-color !important;
+}
+
+@mixin loader-after {
+  height: 35px !important;
+  width: 35px !important;
+  border: 3px solid $green-color !important;
+  border-top-color: $background !important;
+}
+
+@mixin button {
+  background-color: $green-color;
+  color: $white-color;
+  border-radius: 4px;
+  padding: 10px;
+  font-weight: 600;
+}
+
+@mixin btn-hover {
+  background-color: $hover-color;
+  transform: all 0.3s;
+}
