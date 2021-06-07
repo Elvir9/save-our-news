@@ -1,13 +1,13 @@
 import React from 'react';
-import Header from '../Header';
-import Cards from 'components/LandingPage/layout/Cards';
+import Header from '../../components/Header';
+import Cards from 'components/LandingPage/components/Cards';
 import PropTypes from 'prop-types';
 
 const MainContent = ({ posts }) => {
   return (
     <div className='main-content-wrapper'>
       <Header />
-      {/* <Cards posts={posts} /> */}
+      <Cards posts={posts} />
     </div>
   );
 };

@@ -37,7 +37,7 @@ const LandingContainer = () => {
 
   return (
     <div>
-      <MainContent />
+      <MainContent posts={posts} />
     </div>
   );
 };
