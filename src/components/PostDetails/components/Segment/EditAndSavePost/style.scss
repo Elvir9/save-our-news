@@ -1,0 +1,13 @@
+.ui.small.modal.transition.visible.active {
+  > .header.title-header {
+    text-align: center;
+    padding: 22px;
+  }
+
+  > .content {
+    > .ui.form {
+      width: 450px !important;
+      margin: 0px auto;
+    }
+  }
+}

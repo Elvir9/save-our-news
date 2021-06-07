@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header, Segment, Image, Button, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
+import EditAndSavePostModal from './EditAndSavePost';
 
 const SegmentPost = ({ postData }) => {
+  const [openDetailsModal, setOpenDetailsModal] = useState(false);
   return (
     <div className='segment-wrapper'>
       <Segment>
@@ -25,9 +27,21 @@ const SegmentPost = ({ postData }) => {
           <h4>Content:</h4> {postData.content}
         </Segment.Group>
         <Container textAlign='right'>
-          <Button content='Edit' icon='edit' className='edit-post' />
+          <Button
+            content='Edit'
+            icon='edit'
+            className='edit-post'
+            onClick={() => setOpenDetailsModal(true)}
+          />
         </Container>
       </Segment>
+      {openDetailsModal && (
+        <EditAndSavePostModal
+          postData={postData}
+          open={openDetailsModal}
+          onClose={() => setOpenDetailsModal(false)}
+        />
+      )}
     </div>
   );
 };
