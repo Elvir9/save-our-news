@@ -22,6 +22,11 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
     const dataToPost = createObjectToPost();
     onClose();
   };
+  const validateForm = () =>
+    !postForm.author ||
+    !postForm.title ||
+    !postForm.content ||
+    !postForm.description;
   return (
     <Modal size='small' open={open} onClose={onClose}>
       <Modal.Header className='title-header'>
@@ -31,6 +36,7 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
         <Form>
           <Form.Field>
             <Form.Input
+              error={!postForm.author}
               label='Author'
               placeholder='Add new author'
               value={postForm.author}
@@ -41,6 +47,7 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
           </Form.Field>
           <Form.Field>
             <Form.Input
+              error={!postForm.title}
               placeholder='Add new title'
               label='Title'
               value={postForm.title}
@@ -51,6 +58,7 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
           </Form.Field>
           <Form.Field>
             <Form.TextArea
+              error={!postForm.content}
               placeholder='Add new content'
               label='Content'
               value={postForm.content}
@@ -61,6 +69,7 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
           </Form.Field>
           <Form.Field>
             <Form.TextArea
+              error={!postForm.description}
               placeholder='Add new description'
               label='Description'
               value={postForm.description}
@@ -73,7 +82,11 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
       </Modal.Content>
       <Modal.Actions>
         <Button onClick={onClose}>Cancel</Button>
-        <Button positive onClick={saveChangesInDBAsync}>
+        <Button
+          positive
+          onClick={saveChangesInDBAsync}
+          disabled={validateForm()}
+        >
           Save
         </Button>
       </Modal.Actions>
