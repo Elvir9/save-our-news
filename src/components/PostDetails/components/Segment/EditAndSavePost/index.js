@@ -6,8 +6,8 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
   const [postForm, setPostForm] = useState({
     author: postData.author,
     title: postData.title,
-    content: '',
-    description: '',
+    content: postData.content,
+    description: postData.description,
   });
 
   const createObjectToPost = () => {
@@ -20,7 +20,6 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
   };
   const saveChangesInDBAsync = () => {
     const dataToPost = createObjectToPost();
-    console.log('dataToPost', dataToPost);
     onClose();
   };
   return (
