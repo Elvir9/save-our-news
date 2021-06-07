@@ -4,11 +4,15 @@ import App from './components/App';
 
 import './assets/styles/main.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from 'redux/createStore';
 
 const Root = () => (
-  <Router>
-    <App />
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>
 );
 
 const rootElement = document.getElementById('root');
