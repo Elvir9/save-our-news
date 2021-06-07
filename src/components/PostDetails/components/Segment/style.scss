@@ -1,0 +1,47 @@
+@media only screen and (max-width: 767px) {
+  .segment-wrapper {
+    .ui.segment {
+      width: 80% !important;
+    }
+    .ui.right.aligned.container {
+      .ui.button.edit-post {
+        @include button;
+        padding: 12px 25px !important;
+        margin-right: 0;
+        &:hover {
+          @include btn-hover;
+        }
+      }
+    }
+  }
+}
+.segment-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  .ui.segment {
+    width: 40%;
+    .ui.large.image {
+      display: flex;
+      margin: 0px auto;
+    }
+    .ui.segments {
+      display: flex;
+      flex-direction: row;
+      padding: 13px;
+      h4 {
+        margin-right: 5px;
+      }
+    }
+    .ui.right.aligned.container {
+      .ui.button.edit-post {
+        @include button;
+        padding: 12px 25px !important;
+        margin-right: 0;
+        &:hover {
+          @include btn-hover;
+        }
+      }
+    }
+  }
+}

@@ -6,6 +6,11 @@ const AsyncLandingPageContainer = Loadable({
   loading: Loader,
 });
 
+const AsyncPostDetailsContainer = Loadable({
+  loader: () => import('./components/PostDetails/containers'),
+  loading: Loader,
+});
+
 const AsyncPageNotFound = Loadable({
   loader: () => import('./components/PageNotFound'),
   loading: Loader,
@@ -17,6 +22,12 @@ const publicRoutes = [
     name: 'LandingPage',
     exact: true,
     component: AsyncLandingPageContainer,
+  },
+  {
+    path: '/details/:author/:id',
+    name: 'Post Details',
+    exact: true,
+    component: AsyncPostDetailsContainer,
   },
   {
     path: '*',

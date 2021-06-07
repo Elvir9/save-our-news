@@ -1,0 +1,42 @@
+/* For mobile phones: */
+@media only screen and (max-width: 767px) {
+  .cards-wrapper {
+    margin-top: 50px;
+  }
+}
+.cards-wrapper {
+  margin-top: 75px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  .ui.card {
+    margin: 25px 20px;
+    box-shadow: 0 1px 3px 0 $green-color, 0 0 0 1px $green-color;
+    background-color: $background;
+    .ui.image > img {
+      height: 160px;
+    }
+    .content.title-content {
+      height: 145px;
+      overflow-y: auto;
+    }
+    .content {
+      height: 135px;
+      overflow-y: auto;
+    }
+    .read-full-content {
+      display: flex;
+      justify-content: center;
+      height: 65px;
+      > .read-full {
+        @include button;
+        display: flex;
+        align-items: center;
+        &:hover {
+          @include btn-hover;
+        }
+      }
+    }
+  }
+}

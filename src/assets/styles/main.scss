@@ -1,6 +1,8 @@
 @import 'variables';
 @import 'base';
 
-@import 'components/LandingPage/layout/Header/style';
+@import 'components/LandingPage/components/Header/style';
+@import 'components/LandingPage/components/Cards/style';
+@import 'components/PostDetails/components/Segment/style';
 @import 'components/PageNotFound/style';
 @import 'components/shared/Loading/style';
