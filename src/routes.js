@@ -2,7 +2,7 @@ import Loadable from 'react-loadable';
 import Loader from 'components/shared/Loading/index';
 
 const AsyncLandingPageContainer = Loadable({
-  loader: () => import('./components/LandingPage/containers'),
+  loader: () => import('./components/LandingPage/containers/GetAllPosts'),
   loading: Loader,
 });
 
