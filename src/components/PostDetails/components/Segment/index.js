@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Header, Segment, Image, Button, Container } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import EditAndSavePostModal from './EditAndSavePost';
+import { Link } from 'react-router-dom';
 
 const SegmentPost = ({ postData }) => {
   const [openDetailsModal, setOpenDetailsModal] = useState(false);
@@ -27,6 +28,9 @@ const SegmentPost = ({ postData }) => {
           <h4>Content:</h4> {postData.content}
         </Segment.Group>
         <Container textAlign='right'>
+          <Link to='/'>
+            <Button content='Back' icon='left chevron' labelPosition='left' />
+          </Link>
           <Button
             content='Edit'
             icon='edit'

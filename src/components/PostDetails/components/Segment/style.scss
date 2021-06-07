@@ -6,8 +6,9 @@
     .ui.right.aligned.container {
       .ui.button.edit-post {
         @include button;
-        padding: 12px 25px !important;
+        padding: 11px 25px !important;
         margin-right: 0;
+        margin-left: 8px;
         &:hover {
           @include btn-hover;
         }
@@ -37,8 +38,9 @@
     .ui.right.aligned.container {
       .ui.button.edit-post {
         @include button;
-        padding: 12px 32px !important;
+        padding: 11px 32px !important;
         margin-right: 0;
+        margin-left: 8px;
         &:hover {
           @include btn-hover;
         }
