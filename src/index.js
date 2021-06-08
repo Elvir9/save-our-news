@@ -7,6 +7,7 @@ import './assets/styles/main.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from 'redux/createStore';
+import * as serviceWorker from './serviceWorker';
 
 const Root = () => (
   <Provider store={store}>
@@ -18,3 +19,5 @@ const Root = () => (
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(<Root />, rootElement);
+
+serviceWorker.unregister();
