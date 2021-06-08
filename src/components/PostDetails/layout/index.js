@@ -5,7 +5,7 @@ import { useParams } from 'react-router';
 import _ from 'lodash';
 import Loading from 'components/shared/Loading';
 
-const PostDetails = ({ posts }) => {
+const PostDetails = ({ posts, createJsonFileInSystemAsync }) => {
   let { id } = useParams();
 
   const [postData, setPostData] = useState({});
@@ -20,7 +20,7 @@ const PostDetails = ({ posts }) => {
 
   return (
     <div>
-      {!_.isEmpty(postData) ? <SegmentPost postData={postData} /> : <Loading />}
+      {!_.isEmpty(postData) ? <SegmentPost postData={postData} createJsonFileInSystemAsync={createJsonFileInSystemAsync} /> : <Loading />}
     </div>
   );
 };

@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { Modal, Button, Form } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const EditAndSavePostModal = ({ open, onClose, postData }) => {
+const EditAndSavePostModal = ({
+  open,
+  onClose,
+  postData,
+  createJsonFileInSystemAsync,
+}) => {
   const [postForm, setPostForm] = useState({
     author: postData.author,
     title: postData.title,
@@ -18,15 +23,19 @@ const EditAndSavePostModal = ({ open, onClose, postData }) => {
       description: postForm.description,
     };
   };
-  const saveChangesInDBAsync = () => {
+
+  const saveChangesInDBAsync = async () => {
     const dataToPost = createObjectToPost();
+    await createJsonFileInSystemAsync(dataToPost);
     onClose();
   };
+
   const validateForm = () =>
     !postForm.author ||
     !postForm.title ||
     !postForm.content ||
     !postForm.description;
+
   return (
     <Modal size='small' open={open} onClose={onClose}>
       <Modal.Header className='title-header'>

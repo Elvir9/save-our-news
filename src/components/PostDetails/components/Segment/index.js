@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import EditAndSavePostModal from './EditAndSavePost';
 import { Link } from 'react-router-dom';
 
-const SegmentPost = ({ postData }) => {
+const SegmentPost = ({ postData, createJsonFileInSystemAsync }) => {
   const [openDetailsModal, setOpenDetailsModal] = useState(false);
   return (
     <div className='segment-wrapper'>
@@ -44,6 +44,7 @@ const SegmentPost = ({ postData }) => {
           postData={postData}
           open={openDetailsModal}
           onClose={() => setOpenDetailsModal(false)}
+          createJsonFileInSystemAsync={createJsonFileInSystemAsync}
         />
       )}
     </div>

@@ -4,6 +4,7 @@ import postsSelector from 'redux/posts/selector';
 import { useParams } from 'react-router';
 import * as postsActions from 'redux/posts/actions';
 import postsAPI from 'api/postsAPI';
+import writePostAPI from 'api/posts';
 import PostDetails from '../layout';
 
 const PostDetailsContainer = () => {
@@ -36,13 +37,24 @@ const PostDetailsContainer = () => {
     }
   }, [getAllPostsAction, id]);
 
+  const createJsonFileInSystemAsync = async data => {
+    try {
+      const response = await writePostAPI.add(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
     getPostsAsync();
   }, [getPostsAsync]);
 
   return (
     <div>
-      <PostDetails posts={posts} />
+      <PostDetails
+        posts={posts}
+        createJsonFileInSystemAsync={createJsonFileInSystemAsync}
+      />
     </div>
   );
 };
