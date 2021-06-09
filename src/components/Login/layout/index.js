@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Form, Grid, Segment } from 'semantic-ui-react';
+import PropTypes from 'prop-types';
 
-const Login = () => {
+const Login = ({ loginUserIntoApp }) => {
   const [userCredential, setUserCredential] = useState({
     userName: '',
     password: '',
@@ -10,13 +11,14 @@ const Login = () => {
 
   const createObjectToPost = () => {
     return {
-      username: userCredential.userName,
+      userName: userCredential.userName,
       password: userCredential.password,
     };
   };
 
-  const sendCredentialToBackendAsync = () => {
+  const sendCredentialToBackendAsync = async () => {
     const dataToPost = createObjectToPost();
+    await loginUserIntoApp(dataToPost);
   };
 
   const validateForm = () =>
@@ -64,6 +66,10 @@ const Login = () => {
       </Grid.Column>
     </Grid>
   );
+};
+
+Login.propTypes = {
+  loginUserIntoApp: PropTypes.func,
 };
 
 export default Login;
