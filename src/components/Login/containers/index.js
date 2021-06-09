@@ -3,15 +3,21 @@ import Login from '../layout';
 import loginAPI from '../../../api/login';
 import { useHistory } from 'react-router-dom';
 import { useToasts } from 'react-toast-notifications';
+import authService from 'utils/authService';
 
 const LoginContainer = () => {
   const { addToast } = useToasts();
   let history = useHistory();
 
+  const saveUserInfoInLocalStorage = token => {
+    authService.setUserAccessToken(token);
+  };
+
   const loginUserIntoApp = async data => {
     try {
       const response = await loginAPI.add(data);
       if (response) {
+        saveUserInfoInLocalStorage(response.data.token);
         history.push('/dashboard');
         addToast('Successfully logged in!', {
           appearance: 'success',
