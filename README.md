@@ -2,8 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-**First step to run project is to clone this repository into your machine with git command in the terminal: **
+**First step to run project is to clone this repository into your machine with git command in the terminal:**
 ### `git clone https://github.com/Elvir9/save-our-news.git`
+
+**Second step to run project after cloned is to run command into terminal 'npm install' on /client path directory**
+
+**Third step to run project after repository is cloned and packages are installed, is to navigate to /client path folder structure and run script down below**
 
 ## Available Scripts
 
