@@ -8,11 +8,14 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from 'redux/createStore';
 import * as serviceWorker from './serviceWorker';
+import { ToastProvider } from 'react-toast-notifications';
 
 const Root = () => (
   <Provider store={store}>
     <Router>
-      <App />
+      <ToastProvider>
+        <App />
+      </ToastProvider>
     </Router>
   </Provider>
 );

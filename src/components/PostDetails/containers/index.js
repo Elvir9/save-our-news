@@ -6,9 +6,11 @@ import * as postsActions from 'redux/posts/actions';
 import postsAPI from 'api/postsAPI';
 import writePostAPI from 'api/posts';
 import PostDetails from '../layout';
+import { useToasts } from 'react-toast-notifications';
 
 const PostDetailsContainer = () => {
   let { id } = useParams();
+  const { addToast } = useToasts();
 
   const dispatch = useDispatch();
 
@@ -40,8 +42,18 @@ const PostDetailsContainer = () => {
   const createJsonFileInSystemAsync = async data => {
     try {
       const response = await writePostAPI.add(data);
+      if (response) {
+        addToast('Saved Successfully', {
+          appearance: 'success',
+          autoDismiss: true,
+        });
+      }
     } catch (error) {
       console.log(error);
+      addToast('Error while trying to save in a file!', {
+        appearance: 'error',
+        autoDismiss: true,
+      });
     }
   };
 

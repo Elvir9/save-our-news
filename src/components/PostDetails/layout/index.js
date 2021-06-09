@@ -20,11 +20,19 @@ const PostDetails = ({ posts, createJsonFileInSystemAsync }) => {
 
   return (
     <div>
-      {!_.isEmpty(postData) ? <SegmentPost postData={postData} createJsonFileInSystemAsync={createJsonFileInSystemAsync} /> : <Loading />}
+      {!_.isEmpty(postData) ? (
+        <SegmentPost
+          postData={postData}
+          createJsonFileInSystemAsync={createJsonFileInSystemAsync}
+        />
+      ) : (
+        <Loading />
+      )}
     </div>
   );
 };
 PostDetails.propTypes = {
   posts: PropTypes.array,
+  createJsonFileInSystemAsync: PropTypes.func,
 };
 export default PostDetails;
