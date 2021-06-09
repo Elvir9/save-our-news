@@ -4,6 +4,7 @@ import SegmentPost from '../components/Segment';
 import { useParams } from 'react-router';
 import _ from 'lodash';
 import Loading from 'components/shared/Loading';
+import Header from 'components/LandingPage/components/Header';
 
 const PostDetails = ({ posts, createJsonFileInSystemAsync }) => {
   let { id } = useParams();

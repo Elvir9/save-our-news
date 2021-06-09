@@ -6,6 +6,7 @@ import postsSelector from 'redux/posts/selector';
 import * as postsActions from 'redux/posts/actions';
 import { useToasts } from 'react-toast-notifications';
 import { useHistory } from 'react-router-dom';
+import authService from 'utils/authService';
 
 const LandingContainer = () => {
   const { addToast } = useToasts();
@@ -21,6 +22,11 @@ const LandingContainer = () => {
     payload => dispatch(postsActions.getNewsPostAction(payload)),
     [dispatch]
   );
+
+  const logout = () => {
+    authService.clearLocalStorage();
+    history.push('/');
+  };
 
   // API CALLS
   const getPostsAsync = useCallback(async () => {
@@ -46,7 +52,7 @@ const LandingContainer = () => {
 
   return (
     <div>
-      <MainContent posts={posts} />
+      <MainContent posts={posts} logout={logout} />
     </div>
   );
 };

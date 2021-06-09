@@ -10,4 +10,8 @@ export default class {
   static getToken = () => {
     return localStorage.getItem('token');
   };
+
+  static clearLocalStorage = () => {
+    localStorage.clear();
+  };
 }

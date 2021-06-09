@@ -1,7 +1,7 @@
 import axios from 'axios';
 import authService from 'utils/authService';
 
-const backendURL = process.env.REACT_APP_BACKEND_URL;
+const backendURL = 'http://localhost:8080';
 const axiosInstance = axios.create({
   baseURL: backendURL,
 });
