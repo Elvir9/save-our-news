@@ -17,7 +17,6 @@ const Login = () => {
 
   const sendCredentialToBackendAsync = () => {
     const dataToPost = createObjectToPost();
-    console.log(dataToPost);
   };
 
   const validateForm = () =>

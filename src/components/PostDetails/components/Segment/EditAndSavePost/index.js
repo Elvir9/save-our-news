@@ -107,6 +107,7 @@ EditAndSavePostModal.propTypes = {
   open: PropTypes.bool,
   onClose: PropTypes.func,
   postData: PropTypes.object,
+  createJsonFileInSystemAsync: PropTypes.func,
 };
 
 export default EditAndSavePostModal;

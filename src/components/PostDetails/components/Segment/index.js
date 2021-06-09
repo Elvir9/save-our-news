@@ -53,6 +53,7 @@ const SegmentPost = ({ postData, createJsonFileInSystemAsync }) => {
 
 SegmentPost.propTypes = {
   postData: PropTypes.object,
+  createJsonFileInSystemAsync: PropTypes.func,
 };
 
 export default SegmentPost;
