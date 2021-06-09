@@ -50,17 +50,15 @@ const Login = ({ loginUserIntoApp }) => {
                 setUserCredential({ ...userCredential, password: value })
               }
             />
-            <Link to='/dashboard'>
-              <Button
-                color='teal'
-                fluid
-                size='large'
-                disabled={validateForm()}
-                onClick={sendCredentialToBackendAsync}
-              >
-                Login
-              </Button>
-            </Link>
+            <Button
+              color='teal'
+              fluid
+              size='large'
+              disabled={validateForm()}
+              onClick={sendCredentialToBackendAsync}
+            >
+              Login
+            </Button>
           </Segment>
         </Form>
       </Grid.Column>
