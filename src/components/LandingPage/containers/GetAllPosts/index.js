@@ -44,7 +44,7 @@ const LandingContainer = () => {
         }
       );
     }
-  }, [getAllPostsAction]);
+  }, [getAllPostsAction, history, addToast]);
 
   useEffect(() => {
     getPostsAsync();
