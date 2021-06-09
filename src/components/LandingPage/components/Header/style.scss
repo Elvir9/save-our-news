@@ -16,9 +16,21 @@
   .ui.container {
     display: flex !important;
     align-items: center !important;
-    justify-content: center !important;
+    justify-content: flex-end !important;
+
     h2 {
       color: $white-color;
+    }
+  }
+  .header-logout {
+    width: 55%;
+    > span {
+      padding-right: 30px;
+      cursor: pointer;
+      &:hover {
+        color: $hover-color;
+        transition: all 0.2s;
+      }
     }
   }
 }
