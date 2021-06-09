@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import postsSelector from 'redux/posts/selector';
 import { useParams } from 'react-router';
 import * as postsActions from 'redux/posts/actions';
-import postsAPI from 'api/postsAPI';
+import postsAPI from 'api/posts';
 import writePostAPI from 'api/posts';
 import PostDetails from '../layout';
 import { useToasts } from 'react-toast-notifications';
@@ -27,12 +27,8 @@ const PostDetailsContainer = () => {
   const getPostsAsync = useCallback(async () => {
     if (id) {
       try {
-        const { data } = await postsAPI.get('/top-headlines', {
-          params: {
-            country: 'us',
-          },
-        });
-        getAllPostsAction(data.articles);
+        const { data } = await postsAPI.getPostsFromAPI();
+        getAllPostsAction(data.data);
       } catch (e) {
         alert(e, 'Error get posts');
       }
@@ -41,7 +37,7 @@ const PostDetailsContainer = () => {
 
   const createJsonFileInSystemAsync = async data => {
     try {
-      const response = await writePostAPI.add(data);
+      const response = await writePostAPI.addPostInFile(data);
       if (response) {
         addToast('Saved Successfully', {
           appearance: 'success',

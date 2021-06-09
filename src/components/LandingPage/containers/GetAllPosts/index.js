@@ -1,6 +1,6 @@
 import React, { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import postsAPI from '../../../../api/postsAPI';
+import postsAPI from '../../../../api/posts';
 import MainContent from '../../layout/Main';
 import postsSelector from 'redux/posts/selector';
 import * as postsActions from 'redux/posts/actions';
@@ -20,12 +20,9 @@ const LandingContainer = () => {
   // API CALLS
   const getPostsAsync = useCallback(async () => {
     try {
-      const { data } = await postsAPI.get('/top-headlines', {
-        params: {
-          country: 'us',
-        },
-      });
-      getAllPostsAction(data.articles);
+      const { data } = await postsAPI.getPostsFromAPI();
+      console.log(data.data);
+      getAllPostsAction(data.data);
     } catch (e) {
       alert(e, 'Error');
     }
