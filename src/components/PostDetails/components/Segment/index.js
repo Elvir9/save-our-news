@@ -28,7 +28,7 @@ const SegmentPost = ({ postData, createJsonFileInSystemAsync }) => {
           <h4>Content:</h4> {postData.content}
         </Segment.Group>
         <Container textAlign='right'>
-          <Link to='/'>
+          <Link to='/dashboard'>
             <Button content='Back' icon='left chevron' labelPosition='left' />
           </Link>
           <Button
