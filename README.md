@@ -1,10 +1,10 @@
-# Getting Started with Create React App
+# Getting Started with Save-Our-News React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory to start project you need to navigate to /client path, and you can run command to start:
 
 ### `npm start`
 
