@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### `npm install`
 
-**Third step to run project after repository is cloned and packages are installed, is to navigate to /client path folder structure and run script down below**
+**Third step to run project after repository is cloned and packages are installed, is to navigate to `/client` path folder structure and run script down below:**
 
 ## Available Scripts
 
